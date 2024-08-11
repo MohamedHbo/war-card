@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="codecell, tsec, contact, contact us, harsh kapadia, html, css, js, vanilla css">
+    <meta name="description" content="A static contact us page for TSEC CodeCell by Harsh Kapadia">
+    <meta name="author" content="Harsh Kapadia">
+
+    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/contact.css">
+
+    <link rel="shortcut icon" href="~/img/codecell_logo.svg" type="image/x-icon" sizes="any">
+    <link rel="icon" type="image/png" href="~/img/icon1.png" />
+
+    <script defer src="~/js/contact.js"></script>
+
+    <title>Contact us</title>
+
+    <style>
+        .logo img {
+            border-radius: 50%;
+            transition: transform 0.5s ease, border 0.5s ease;
+            border: 5px solid transparent;
+            width: 100px; /* حجم الصورة الجديد */
+        
+        }
+
+            .logo img:hover {
+                transform: scale(1.1);
+                border: 5px solid red;
+            }
+    </style>
+
+
+
+</head>
+
+
+
+
+
+<body>
+    <nav class="navbar">
+        <div class="left-side">
+            <div class="burger-menu">
+                <div class="line-1"></div>
+                <div class="line-2"></div>
+                <div class="line-3"></div>
+            </div>
+
+            <div class="logo">
+                <a href="#"><img src="../img/war.png" style="height: 100px;" alt="HBO"></a>
+            </div>
+            <ul class="navbar-main-ul hide-burger-menu burger-menu-dropdown">
+                <li><a href="/Card/Index">Home</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <main>
+        <div class="title" style="color: red">Contact us</div>
+        <div class="title-info">We'll get back to you soon!</div>
+
+        <form action="" method="" class="form">
+            <div class="input-group">
+                <input type="text" name="first_name" id="first-name" placeholder="First name">
+                <label for="first-name">First name</label>
+            </div>
+
+            <div class="input-group">
+                <input type="text" name="last_name" id="last-name" placeholder="Last Name">
+                <label for="last-name">Last name</label>
+            </div>
+
+            <div class="input-group">
+                <input type="email" name="e-mail" id="e-mail" placeholder="e-mail">
+                <label for="e-mail">e-mail</label>
+            </div>
+
+            <div class="textarea-group">
+                <textarea name="message" id="message" rows="5" placeholder="Message"></textarea>
+                <label for="message">Message</label>
+            </div>
+
+            <div class="button-div">
+                <button type="submit">Send</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <a href="https://www.facebook.com/profile.php?id=100037050065994&mibextid=ZbWKwL" target="_blank"><img class="social-media-img" src="../img/fs.png" alt="Facebook" style="height: 120px;"></a>
+        <a href="https://github.com/MohamedHbo" target="_blank"><img class="social-media-img" src="../img/R.png" alt="GitHub"></a>
+        <a href="#"><img class="codecell-img" src="../img/myname.png" style="height: 300px;width: 400px;" alt="HBO"></a>
+        <a href="https://www.linkedin.com/in/mohamed-sayed-yousef-95735925a/" target="_blank"><img class="social-media-img" src="../img/lin.png" alt="LinkedIn" style="height: 120px;"></a>
+        <a href="#" target="_blank"><img class="social-media-img" src="../img/ins.png" alt="Instagram" style="height: 190px;"></a>
+    </footer>
+
+    <script defer src="~/js/contact.js"></script>
+</body>
+</html>
