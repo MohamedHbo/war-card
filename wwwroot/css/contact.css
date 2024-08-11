@@ -1,0 +1,917 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: #2C2A6A;
+    font-family: 'Overpass Mono', monospace;
+    color: #f5f5f5;
+}
+
+a
+{
+    text-decoration: none;
+    color: #f5f5f5;
+}
+
+a:hover
+{
+    color: red;
+}
+
+.hide
+{
+    display: none;
+}
+footer
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 20vh;
+    width: 75%;
+    margin: auto;
+    opacity: 0.2;
+    border-top: 1px solid #212121;
+}
+
+footer:hover
+{
+    animation: fade 0.3s ease;
+    opacity: 0.9;
+}
+
+.social-media-img
+{
+    height: 5vh;
+}
+
+.codecell-img
+{
+    height: 10vh;
+}
+
+@keyframes fade
+{
+    0%
+    {
+        opacity: 0.2;
+    }
+
+    100%
+    {
+        opacity: 0.9;
+    }
+}
+
+/* Media queries */
+
+@media screen and (max-width: 1295px)
+{
+    footer
+    {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 500px)
+{
+    footer
+    {
+        opacity: 0.9;
+    }
+}   
+
+
+main
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+}
+
+.title
+{
+    font-size: 50px;
+    font-weight: bold;
+    padding: 1.5% 0;
+}
+
+.title-info
+{
+	padding-bottom: 2%;
+}
+
+.form
+{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: 2%;
+}
+
+.input-group, .textarea-group
+{
+    padding: 1% 0;
+}
+
+input, textarea
+{
+    color: inherit;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #757575;
+    padding: 1.5%;
+    font-size: 20px;
+}
+
+input:focus, textarea:focus
+{
+    background-color: transparent;
+    outline: transparent;
+    border-bottom: 2px solid red;
+}
+
+input::placeholder, textarea::placeholder
+{
+    color: transparent;
+}
+
+label
+{
+    color: #757575;
+    position: relative;
+    left: 0.5em;
+    top: -2em;
+	cursor: auto;
+    transition: 0.3s ease all;
+}
+
+input:focus ~ label, input:not(:placeholder-shown) ~ label
+{
+    top: -4em;
+    color: red;
+    font-size: 15px;
+}
+
+textarea:focus ~ label, textarea:not(:placeholder-shown) ~ label
+{
+    top: -10.5em;
+    color: red;
+    font-size: 15px;
+}
+
+.button-div
+{
+    display: flex;
+    justify-content: center;
+}
+
+button
+{
+    padding: 2%;
+    width: 50%;
+    border: 100px solid;
+    border-color: red;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 18px;
+    background-color: black;
+    color: inherit;
+    box-shadow: 0 0 10px red;
+}
+
+button:hover
+{
+    background-color: #424242;
+    color: red;
+    cursor: pointer;
+}
+
+
+/* Media queries */
+
+@media screen and (max-width: 1200px)
+{
+    .form
+    {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 680px)
+{
+    .form
+    {
+		width: 90%;
+    }
+}
+
+@media screen and (max-width: 500px)
+{
+	.title
+	{
+		font-size: 40px;
+		padding-top: 6%;
+	}
+
+	.title-info
+	{
+		font-size: 13px;
+	}
+	
+	.form
+	{
+		padding: 6% 4%;
+		padding-top: 15%;
+	}
+
+	.input-group, .textarea-group
+    {
+		padding: 3% 0;
+	}
+	
+	input, textarea
+	{
+		font-size: 15px;
+	}
+
+	input:focus ~ label, input:not(:placeholder-shown) ~ label
+	{
+		top: -3.5em;
+		left: 0.1em;
+	}
+	
+	textarea:focus ~ label, textarea:not(:placeholder-shown) ~ label
+	{
+		top: -8.5em;
+		left: 0.2em;
+    }
+    
+    button
+    {
+        font-size: 15px;
+    }
+}
+
+
+.navbar
+{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.left-side
+{
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.logo
+{
+    padding: 0 2%;
+}
+
+.logo img
+{
+    height: 7vh;
+}
+
+ul
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+}
+
+li
+{
+    list-style: none;
+}
+
+.left-side li
+{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.right-side
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0.1;
+}
+
+.account
+{
+    display: flex;
+    align-items: center;
+    margin-right: 30%;
+}
+
+.account:hover
+{
+    cursor: pointer;
+}
+
+.right-side img
+{
+    height: 5vh;
+    border-radius: 50px;
+    margin-right: 20%;
+}
+
+.dropdown-caret {
+    border-top-style: solid;
+    border-top-width: 4px;
+    border-right: 4px solid transparent;
+    border-bottom: 0 solid transparent;
+    border-left: 4px solid transparent;
+}
+
+.dropdown
+{
+    position: absolute;
+    top: 8vh;
+    right: 1vh;
+    border: 0.5px solid;
+    border-radius: 5px;
+    border-color: #212121;
+    padding: 0.5%;
+    box-shadow: 0 0 10px #212121;
+    background-color: black;
+    z-index: 2;
+}
+
+.user-name
+{
+    margin-bottom: 5%;
+    padding: 2%;
+    width: 180px;
+    border-bottom: 1px solid #212121;
+    color: #757575;
+}
+
+.user-name:hover
+{
+    cursor: default;
+}
+
+.dropdown ul
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 180px;
+}
+
+.dropdown li
+{
+    padding: 2%;
+    width: 180px;
+}
+
+.dropdown li:hover
+{
+    background-color: #424242;
+    border-radius: 3px;
+}
+
+
+/* Media query */
+
+@media screen and (max-width: 1200px)
+{
+    .logo
+    {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .burger-menu
+    {
+        flex: 0.1;
+        padding-left: 2%;
+    }
+
+    .burger-menu:hover
+    {
+        cursor: pointer;
+    }
+    
+    .line-1, .line-2, .line-3
+    {
+        width: 25px;
+        height: 3px;
+        background-color: #f5f5f5;
+        margin: 5px;
+    }
+
+    .burger-menu-dropdown
+	{
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 10vh;
+		left: 0;
+		width: 100%;
+		margin: auto;
+		z-index: 1;
+		background-color: rgba(0, 0, 0, 0.9); /* RGB of black */
+	}
+
+	.burger-menu-dropdown li
+	{
+		width: 90vw;
+		display: flex;
+		justify-content: center;
+	}
+
+	.burger-menu-dropdown li:hover
+	{
+		color: #69f0ae;
+		background-color: rgba(66, 66, 66, 0.3);
+		border-radius: 8px;
+	}
+
+	.hide-burger-menu
+	{
+		display: none;
+	}
+}*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: black;
+    font-family: 'Overpass Mono', monospace;
+    color: #f5f5f5;
+}
+
+a
+{
+    text-decoration: none;
+    color: #f5f5f5;
+}
+
+a:hover
+{
+    color: red;
+}
+
+.hide
+{
+    display: none;
+}
+footer
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 20vh;
+    width: 75%;
+    margin: auto;
+    opacity: 0.2;
+    border-top: 1px solid #212121;
+}
+
+footer:hover
+{
+    animation: fade 0.3s ease;
+    opacity: 0.9;
+}
+
+.social-media-img
+{
+    height: 5vh;
+}
+
+.codecell-img
+{
+    height: 10vh;
+}
+
+@keyframes fade
+{
+    0%
+    {
+        opacity: 0.2;
+    }
+
+    100%
+    {
+        opacity: 0.9;
+    }
+}
+
+/* Media queries */
+
+@media screen and (max-width: 1295px)
+{
+    footer
+    {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 500px)
+{
+    footer
+    {
+        opacity: 0.9;
+    }
+}   
+
+
+main
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+}
+
+.title
+{
+    font-size: 50px;
+    font-weight: bold;
+    padding: 1.5% 0;
+}
+
+.title-info
+{
+	padding-bottom: 2%;
+}
+
+.form
+{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: 2%;
+}
+
+.input-group, .textarea-group
+{
+    padding: 1% 0;
+}
+
+input, textarea
+{
+    color: inherit;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #757575;
+    padding: 1.5%;
+    font-size: 20px;
+}
+
+input:focus, textarea:focus
+{
+    background-color: transparent;
+    outline: transparent;
+    border-bottom: 2px solid red;
+}
+
+input::placeholder, textarea::placeholder
+{
+    color: transparent;
+}
+
+label
+{
+    color: #757575;
+    position: relative;
+    left: 0.5em;
+    top: -2em;
+	cursor: auto;
+    transition: 0.3s ease all;
+}
+
+input:focus ~ label, input:not(:placeholder-shown) ~ label
+{
+    top: -4em;
+    color: red;
+    font-size: 15px;
+}
+
+textarea:focus ~ label, textarea:not(:placeholder-shown) ~ label
+{
+    top: -10.5em;
+    color: red;
+    font-size: 15px;
+}
+
+.button-div
+{
+    display: flex;
+    justify-content: center;
+}
+
+button
+{
+    padding: 2%;
+    width: 50%;
+    border: 1px solid;
+    border-color: red;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 18px;
+    background-color: black;
+    color: inherit;
+    box-shadow: 0 0 10px red;
+}
+
+button:hover
+{
+    background-color: #424242;
+    color: red;
+    cursor: pointer;
+}
+
+
+/* Media queries */
+
+@media screen and (max-width: 1200px)
+{
+    .form
+    {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 680px)
+{
+    .form
+    {
+		width: 90%;
+    }
+}
+
+@media screen and (max-width: 500px)
+{
+	.title
+	{
+		font-size: 40px;
+		padding-top: 6%;
+	}
+
+	.title-info
+	{
+		font-size: 13px;
+	}
+	
+	.form
+	{
+		padding: 6% 4%;
+		padding-top: 15%;
+	}
+
+	.input-group, .textarea-group
+    {
+		padding: 3% 0;
+	}
+	
+	input, textarea
+	{
+		font-size: 15px;
+	}
+
+	input:focus ~ label, input:not(:placeholder-shown) ~ label
+	{
+		top: -3.5em;
+		left: 0.1em;
+	}
+	
+	textarea:focus ~ label, textarea:not(:placeholder-shown) ~ label
+	{
+		top: -8.5em;
+		left: 0.2em;
+    }
+    
+    button
+    {
+        font-size: 15px;
+    }
+}
+
+
+.navbar
+{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.left-side
+{
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.logo
+{
+    padding: 0 2%;
+}
+
+.logo img
+{
+    height: 7vh;
+}
+
+ul
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+}
+
+li
+{
+    list-style: none;
+}
+
+.left-side li
+{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.right-side
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0.1;
+}
+
+.account
+{
+    display: flex;
+    align-items: center;
+    margin-right: 30%;
+}
+
+.account:hover
+{
+    cursor: pointer;
+}
+
+.right-side img
+{
+    height: 5vh;
+    border-radius: 50px;
+    margin-right: 20%;
+}
+
+.dropdown-caret {
+    border-top-style: solid;
+    border-top-width: 4px;
+    border-right: 4px solid transparent;
+    border-bottom: 0 solid transparent;
+    border-left: 4px solid transparent;
+}
+
+.dropdown
+{
+    position: absolute;
+    top: 8vh;
+    right: 1vh;
+    border: 0.5px solid;
+    border-radius: 5px;
+    border-color: #212121;
+    padding: 0.5%;
+    box-shadow: 0 0 10px #212121;
+    background-color: black;
+    z-index: 2;
+}
+
+.user-name
+{
+    margin-bottom: 5%;
+    padding: 2%;
+    width: 180px;
+    border-bottom: 1px solid #212121;
+    color: #757575;
+}
+
+.user-name:hover
+{
+    cursor: default;
+}
+
+
+
+    .navbar-main-ul li {
+        font-weight: bold; /* جعل النص بخط عريض */
+    }
+    .navbar-main-ul li:hover {
+        color: black; /* تغيير لون النص إلى الأسود عند التحويم */
+    }
+.dropdown ul
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 180px;
+}
+
+.dropdown li
+{
+    padding: 2%;
+    width: 180px;
+}
+
+.dropdown li:hover
+{
+    background-color: #424242;
+    border-radius: 3px;
+}
+
+
+/* Media query */
+
+@media screen and (max-width: 1200px)
+{
+    .logo
+    {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .burger-menu
+    {
+        flex: 0.1;
+        padding-left: 2%;
+    }
+
+    .burger-menu:hover
+    {
+        cursor: pointer;
+    }
+    
+    .line-1, .line-2, .line-3
+    {
+        width: 25px;
+        height: 3px;
+        background-color: #f5f5f5;
+        margin: 5px;
+    }
+
+    .burger-menu-dropdown
+	{
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 10vh;
+		left: 0;
+		width: 100%;
+		margin: auto;
+		z-index: 1;
+		background-color: rgba(0, 0, 0, 0.9); /* RGB of black */
+	}
+
+	.burger-menu-dropdown li
+	{
+		width: 90vw;
+		display: flex;
+		justify-content: center;
+	}
+
+	.burger-menu-dropdown li:hover
+	{
+		color: #69f0ae;
+		background-color: rgba(66, 66, 66, 0.3);
+		border-radius: 8px;
+	}
+
+	.hide-burger-menu
+	{
+		display: none;
+	}
+}

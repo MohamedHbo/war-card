@@ -1,0 +1,92 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    font-family: Arial, sans-serif;
+}
+
+.custom-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Adjust space between cards */
+    justify-content: center; /* Center align cards horizontally */
+}
+
+.custom-card {
+    border: 1px solid #ddd; /* Add border to the card */
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.3s ease-in-out;
+    position: relative;
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.5); /* Add glowing red shadow */
+}
+
+    .custom-card:hover {
+        box-shadow: none; /* Remove shadow on hover */
+    }
+
+    .custom-card img {
+        height: 300px; /* Adjust height to better fit the image */
+        width: 100%;
+        object-fit: cover; /* Ensures the image covers the area without distortion */
+        border-bottom: 1px solid #ddd; /* Optional: adds a border between image and content */
+    }
+
+.custom-card-body {
+    padding: 1rem;
+    background-color: #000; /* Optional: adjust to match your theme */
+    color: #fff; /* Optional: adjust text color */
+}
+
+.custom-card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.custom-card-text {
+    font-size: 1rem;
+}
+
+.custom-btn-group {
+    display: flex;
+    gap: 0.5rem; /* Space between buttons */
+}
+
+.custom-btn {
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff; /* Adjust button color */
+    border: none;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    text-align: center;
+}
+
+    .custom-btn:hover {
+        background-color: #0056b3; /* Adjust button color on hover */
+    }
+
+@media (min-width: 768px) {
+    .custom-card {
+        margin-bottom: 1.5rem; /* Increase margin for larger screens */
+    }
+}

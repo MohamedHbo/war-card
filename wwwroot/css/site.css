@@ -1,0 +1,129 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.card {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.3s ease-in-out;
+    position: relative;
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.5); /* Add glowing red shadow */
+}
+
+    .card:hover {
+        box-shadow: none; /* Remove shadow on hover */
+    }
+
+.card-img-top {
+    height: 300px; /* Adjust height to better fit the image */
+    width: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-bottom: 1px solid #ddd; /* Optional: adds a border between image and content */
+}
+
+.card-body {
+    padding: 1rem;
+    background-color: #000; /* Optional: adjust to match your theme */
+    color: #fff; /* Optional: adjust text color */
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+.btn-group .btn {
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .card {
+        margin-bottom: 1.5rem; /* Increase margin for larger screens */
+    }
+}
+
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.form-control {
+    border: 2px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+    .form-control:focus {
+        border-color: #80bdff;
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.25);
+    }
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+    }
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 14px;
+}
+
+h2, h4 {
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+    a:hover {
+        color: #0056b3;
+    }
+
+.row {
+    margin-top: 20px;
+}
