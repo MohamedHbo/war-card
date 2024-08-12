@@ -1,0 +1,110 @@
+﻿@model war.Models.ViewModels.CardPersonViewModel
+
+@{
+    ViewData["Title"] = "Card Details";
+}
+
+<style>
+    body {
+        background-color: #121212;
+        color: #ffffff;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    h2 {
+        color: #ff4d4d;
+        font-size: 28px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(255, 77, 77, 0.5); 
+        margin-top: 20px; 
+    }
+
+    .row dt {
+        font-weight: bold;
+        color: #ff4d4d;
+        font-size: 20px;
+    }
+
+    .row dd {
+        margin-bottom: 15px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    img {
+        border: 3px solid #555;
+        border-radius: 5px;
+        padding: 5px;
+        margin-top: 10px;
+        box-shadow: 0 0 10px rgba(255, 77, 77, 0.8); 
+    }
+
+    .custom-btn-edit {
+        background-color: black; 
+        color: blue; 
+        border: 2px solid blue; 
+        padding: 10px 20px; 
+        font-size: 20px; 
+        border-radius: 5px; 
+        transition: all 0.3s ease; 
+        font-weight: bold; 
+        margin-top: -10px; 
+    }
+
+        .custom-btn-edit:hover {
+            background-color: blue; 
+            color: white; 
+            border-color: darkblue; 
+        }
+
+
+
+    a {
+        text-decoration: none;
+        color: #ff4d4d;
+        transition: color 0.3s ease;
+    }
+
+        a:hover {
+            color: #e60000;
+        }
+
+    .row {
+        margin-top: 20px;
+    }
+</style>
+
+<h2>Card Details</h2>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Name
+        </dt>
+        <dd class="col-sm-10">
+            @Model.CardName
+        </dd>
+        <dt class="col-sm-2">
+            Description
+        </dt>
+        <dd class="col-sm-10">
+            @Model.CardDescription
+        </dd>
+        <dt class="col-sm-2">
+            Person
+        </dt>
+        <dd class="col-sm-10">
+            @Model.PersonName
+        </dd>
+        <dt class="col-sm-2">
+            Image
+        </dt>
+        <dd class="col-sm-10">
+            <img src="~/uploads/@Model.CardImage" alt="@Model.CardName" style="width: 300px; height:400px;" />
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CardId" class="custom-btn-edit">Edit</a>
+</div>

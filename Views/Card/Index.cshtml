@@ -1,0 +1,212 @@
+﻿@model IEnumerable<war.Models.ViewModels.CardPersonViewModel>
+
+@{
+    ViewData["Title"] = "Cards";
+}
+
+
+<div class="mb-3" style="margin-top:60px;">
+    <select id="personSelect" class="form-select">
+        <option value="">-- Select Person --</option>
+        @foreach (var person in (SelectList)ViewBag.Persons)
+        {
+            <option value="@person.Value">@person.Text</option>
+        }
+    </select>
+</div>
+
+<div class="row" id="cardsContainer">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-4 card-item" data-person="@item.PersonName.ToLower()">
+            <div class="card shadow-sm custom-card">
+                <img class="card-img-top" src="@Url.Content("~/uploads/" + item.CardImage)" alt="@item.CardName">
+                <div class="card-body">
+                    <div class="text-box">
+                        <div class="text-box-title">
+                            <h5 class="card-title">@item.CardName</h5>
+                        </div>
+                        <div class="text-box-description">
+                            <p class="card-text">@item.CardDescription</p>
+                        </div>
+                    </div>
+                    <p class="card-text"><small class="text-muted">@item.PersonName</small></p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a asp-action="Details" asp-route-id="@item.CardId" class="btn btn-sm custom-btn custom-btn-details">Details</a>
+                            <a asp-action="Edit" asp-route-id="@item.CardId" class="btn btn-sm custom-btn custom-btn-edit">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@item.CardId" class="btn btn-sm custom-btn custom-btn-delete">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+<script>
+    document.getElementById('personSelect').addEventListener('change', function () {
+        var selectedPerson = this.options[this.selectedIndex].text.toLowerCase().trim();
+        var cards = document.querySelectorAll('.card-item');
+
+        cards.forEach(function (card) {
+            var cardPerson = card.getAttribute('data-person').toLowerCase().trim();
+
+            if (selectedPerson === "-- select person --" || selectedPerson === cardPerson) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+<style>
+  
+    .custom-card {
+        background-color: black; 
+        border: 2px solid red; 
+        box-shadow: 0 8px 16px rgba(255, 0, 0, 0.6); 
+        border-radius: 10px; 
+        padding: 15px; 
+        transition: transform 0.3s, box-shadow 0.3s; 
+    }
+
+        .custom-card:hover {
+            transform: translateY(-10px) scale(1.05); 
+            box-shadow: 0 16px 32px rgba(255, 0, 0, 0.8); 
+        }
+
+    
+    #personSelect {
+        background-color: black; 
+        color: white; 
+        border: 2px solid red;
+        padding: 10px; 
+        border-radius: 5px;/
+        font-size: 16px; 
+        font-weight: bold; 
+        appearance: none; 
+        -webkit-appearance: none; 
+        -moz-appearance: none; 
+        text-align: center; 
+        position: relative; 
+        width: 200px;
+        box-shadow: 0 4px 6px -1px rgba(255, 0, 0, 0.6), 
+        0 -4px 6px -1px rgba(255, 0, 0, 0.6); 
+        transition: background-color 0.3s, box-shadow 0.3s; 
+    }
+
+        
+        #personSelect::after {
+            content: "▼";
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: white; 
+        }
+
+       
+        #personSelect:hover {
+            background-color: red; 
+            color: white; 
+        }
+
+    
+        #personSelect:focus {
+            outline: none;
+            border: 2px solid red; 
+            box-shadow: 0 8px 12px rgba(255, 0, 0, 0.8); 
+        }
+
+    .custom-btn {
+        margin-right: 10px; 
+        font-weight: bold; 
+        padding: 10px 15px; 
+    }
+
+    
+    .custom-btn-edit {
+        background-color: black; 
+        color: blue; 
+        border: 2px solid blue; 
+    }
+
+        .custom-btn-edit:hover {
+            background-color: blue; 
+            border-color: darkblue; 
+        }
+
+    
+    .custom-btn-details {
+        background-color: black; 
+        color: green;
+        border: 2px solid green; 
+    }
+
+        .custom-btn-details:hover {
+            background-color: green; 
+            border-color: darkgreen; 
+        }
+
+    
+    .custom-btn-delete {
+        background-color: black; 
+        color: red; 
+        border: 2px solid red; 
+    }
+
+        .custom-btn-delete:hover {
+            background-color: red; 
+            border-color: darkred; 
+        }
+
+    
+    .text-box {
+        margin-bottom: 10px; 
+        display: flex; 
+        gap: 10px; 
+    }
+
+    
+    .text-box-title,
+    .text-box-description {
+        background-color: #e2363b; 
+        border-radius: 8px; 
+        padding: 10px; 
+        box-shadow: 0 4px 6px rgba(255, 0, 0, 0.6); 
+        flex: 1; 
+        font-size: 14px; 
+    }
+
+    
+    .text-box-title,
+    .text-box-description {
+        display: flex; 
+        align-items: center; 
+    }
+
+        
+        .text-box-title h5,
+        .text-box-description p {
+            color: black; 
+            margin: 0; 
+        }
+
+        
+        .text-box-description p {
+            margin-top: 5px; 
+        }
+
+  
+    .card-body .card-text small.text-muted {
+        color: red; 
+        font-weight: bold; 
+        font-size: 20px;
+        text-shadow: 1px 1px 2px rgba(255, 0, 0, 0.8), 
+        2px 2px 4px rgba(0, 0, 255, 0.6); 
+    }
+</style>
