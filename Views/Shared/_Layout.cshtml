@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - war</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/war.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/custom-styles.css" asp-append-version="true" />
+    @RenderSection("Styles", required: false)
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="~/img/logo.png"> <!-- Add this line -->
+    <style>
+        body {
+            background-color: black;
+           
+            font-family: 'Staatliches', sans-serif;
+        }
+
+        .navbar {
+            background-color: black;
+            box-shadow: 0 0 10px red;
+        }
+
+            .navbar .nav-link, .navbar .navbar-brand {
+                font-weight: bold;
+                color: red;
+                font-size: 24px; /* تكبير النص */
+                text-shadow: 2px 2px 5px red; /* جعل النص ثلاثي الأبعاد */
+                text-transform: capitalize; /* تحويل أول حرف من الكلمة فقط إلى حرف كبير */
+            }
+
+                .navbar .nav-link:hover {
+                    color: white;
+                }
+
+                .navbar .navbar-brand img {
+                    border: 2px solid red;
+                    border-radius: 50%;
+                    transition: transform 3s;
+                }
+
+                    .navbar .navbar-brand img:hover {
+                        transform: rotate(360deg);
+                    }
+
+        .footer {
+            background-color: black;
+            box-shadow: 0 -5px 10px red;
+            border-top: none; /* إزالة أي حدود في الأعلى */
+        }
+
+
+            /* تنسيق النصوص الأخرى */
+            h2::first-letter, h4::first-letter, .form-group label::first-letter, .btn-primary::first-letter, .alert-danger::first-letter, a::first-letter, .navbar .nav-link::first-letter, .navbar .navbar-brand::first-letter, .footer::first-letter {
+                text-transform: capitalize;
+            }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#">
+                <img src="~/img/war.png" alt="war" width="50" height="50" style="margin-left:50px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a asp-action="Index" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-action="Create" class="nav-link">Create New</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/html/contact.html">Contact-us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - Mohamed Sayed Yousef - <a asp-area="" asp-controller="Home" asp-action="Privacy" style="color:red">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
